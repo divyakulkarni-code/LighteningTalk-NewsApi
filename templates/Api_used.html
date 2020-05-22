@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %} 
+
+
+        <form action="/demonstration-api">
+
+            <p>
+                <div class="content">
+                
+                <ul class = "centered">
+                <li>pip3 install newsapi-python</li>
+                <li>Imported NewsApiClient</li>
+                <li>Created an object to call upon API method</li></ul>
+            </div>
+            </p>
+            <p>
+            <h3>Method Used</h3>
+                all_articles = newsapi.get_everything(q='Corona Virus',
+                                      language='en',
+                                      page=2)
+
+            </p>
+
+            <p>
+            <h3>Data Structure  </h3>
+            <div class="content">
+                
+                <ul class = "centered">
+                <li>type(all_articles) --> {}</li>
+                <li>all_articles.keys() ----> (['status','totalResults','articles']</li>
+                <li>articles --- > [list of all web articles]</li>
+                <li>all_articles['articles'][0] ---- > {key : value}</li></ul></div>
+
+            </p>
+
+            <h3>Request Parameters</h3>
+            <div class="content">
+                
+                <ul class = "centered">
+
+            <li>q - Keywords or phrases to search for in the article title and body.</li>
+            <li>sources - for the news sources or blogs you want headlines from</li>
+            <li>domains - bbc.co.uk, techcrunch.com, engadget.com</li>
+            <li>from/to : A date and optional time</li>
+            <li>sortby : popularity, relavancy, or published at </li></ul></div>
+
+        
+            <input type="submit" value="Click to fetch the NEWS" class="button">  
+
+        </form>
+               
+
+{% endblock %}
